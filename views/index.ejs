@@ -2,15 +2,29 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Star Wars is an American epic space opera media franchise created by George Lucas, 
-      which began with the eponymous 1977 film[a] and quickly became a worldwide pop culture phenomenon. 
-      The franchise has been expanded into various films and other media, including television series, 
-      video games, novels, comic books, theme park attractions, and themed areas, comprising an all-encompassing fictional universe.
-      [b] Star Wars is one of the highest-grossing media franchises of all time.</p>
-    <img src="/images/star-wars.jpg" alt="Star Wars" />
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="container">
+      <p>
+        Star Wars is an American epic space opera media franchise created by George Lucas, 
+        which began with the eponymous 1977 film[a] and quickly became a worldwide pop culture phenomenon. 
+        The franchise has been expanded into various films and other media, including television series, 
+        video games, novels, comic books, theme park attractions, and themed areas, comprising an all-encompassing fictional universe.
+        [b] Star Wars is one of the highest-grossing media franchises of all time.
+      </p>
+      <img src="/images/star-wars.jpg" alt="Star Wars" />
+    </div>
+    <footer>
+      <p>&copy; 2025 Star Wars Fan Page. All rights reserved.</p>
+    </footer>
   </body>
 </html>
