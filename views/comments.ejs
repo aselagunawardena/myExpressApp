@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/comments">Comments</a>
+    </nav>
+    <div class="container">
+      <h2>Leave a Comment</h2>
+      <form action="/comments" method="post">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+        
+        <label for="comment">Comment:</label><br />
+        <textarea id="comment" name="comment" rows="5" required></textarea><br /><br />
+        
+        <button type="submit">Submit</button>
+      </form>
+
+      <h2>Fan Comments</h2>
+      <ul>
+        <% comments.forEach(function(comment) { %>
+          <li>
+            <strong><%= comment.name %></strong> (<%= comment.created_at %>):<br />
+            <%= comment.comment %>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+    <footer>
+      <p>&copy; 2025 Star Wars Fan Page. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
