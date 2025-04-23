@@ -25,7 +25,7 @@ on:
   workflow_dispatch: # Manual trigger  
 
 env:
-  AZURE_WEBAPP_NAME: acemy    # set this to your application's name
+  AZURE_WEBAPP_NAME: acemyWebApp    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '20.x'                # set this to the node version to use
 
@@ -72,7 +72,7 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        slot-name: 'staging' # Deploy to the staging slot
+        slot-name: 'acemyWebApp-staging' # Deploy to the staging slot
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_STAGING }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
