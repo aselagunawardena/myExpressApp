@@ -29,4 +29,4 @@ jobs:
         az deployment group create \
           --resource-group $AZURE_RESOURCE_GROUP \
           --template-file infra/main.bicep \
-          --parameters parameters.json 
+          --parameters @infra/parameters.json 
