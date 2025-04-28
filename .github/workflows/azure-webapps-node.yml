@@ -76,6 +76,14 @@ jobs:
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_STAGING }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
+    - name: Set Startup Command
+      run: |
+        az webapp config set \
+          --name ${{ env.AZURE_WEBAPP_NAME }} \
+          --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+          --slot staging \
+          --startup-file "npm start"
+
   swap-slots:
     name: Swap Staging to Production
     runs-on: ubuntu-latest
